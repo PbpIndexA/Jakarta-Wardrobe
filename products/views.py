@@ -150,13 +150,13 @@ def find_product(request):
     query = request.GET.get('q', '')  # Search query
     category = request.GET.get('category', '')  # Selected category
     shop_name = request.GET.get('shop_name', '')  # Selected shop name
-    filter_type = request.GET.get('filter', '')  # Existing filter (e.g., price/rating)
+    filter_type = request.GET.get('filter', '')  # Existing filter
 
     products = Product.objects.all()
 
     # Apply search filter if query is provided
     if query:
-        products = products.filter(Q(name__icontains=query) | Q(desc__icontains=query))
+        products = products.filter(Q(name__icontains=query) )
 
     # Apply category filter if a category is selected
     if category:
