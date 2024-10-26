@@ -150,7 +150,7 @@ def find_product(request):
     query = request.GET.get('q', '')  # Search query
     category = request.GET.get('category', '')  # Selected category
     shop_name = request.GET.get('shop_name', '')  # Selected shop name
-    filter_type = request.GET.get('filter', '')  # Existing filter (e.g., price/rating)
+    filter_type = request.GET.get('filter', '')  # Existing filter
 
     products = Product.objects.all()
 
