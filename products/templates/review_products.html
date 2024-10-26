@@ -86,7 +86,7 @@
 
       <div class="bg-white shadow-md rounded-lg overflow-hidden w-full lg:w-2/3 p-4">
         <h2 class="text-xl font-bold mb-4 text-center">Add a Comment</h2>
-        <form id="commentForm" class="text-center mb-4">
+        <form id="commentForm" class="text-center mb-4" data-authenticated="{% if request.user.is_authenticated %}true{% else %}false{% endif %}">
             {% csrf_token %}
             <input type="hidden" name="product_id" value="{{ product.uuid }}">
             <textarea name="comment" rows="4" placeholder="Add a comment..." class="border w-full p-2 rounded mb-2"></textarea>
@@ -94,7 +94,7 @@
         </form>
       
         <h2 class="text-xl font-bold mb-4 text-center">Comments</h2>
-        <ul id="commentSection" class="space-y-4" data-authenticated="{% if request.user.is_authenticated %}true{% else %}false{% endif %}">
+        <ul id="commentSection" class="space-y-4">
                 {% for comment in comments %}
                 <li class="flex flex-col">
                     <div>
