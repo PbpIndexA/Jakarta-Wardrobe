@@ -30,7 +30,8 @@ DEBUG = not PRODUCTION
 ALLOWED_HOSTS = [
     "localhost", 
     "127.0.0.1", 
-    "sayyid-thariq31-jawaapp.pbp.cs.ui.ac.id"
+    "sayyid-thariq31-jawaapp.pbp.cs.ui.ac.id",
+    "andi-muhammad37-jawaapp.pbp.cs.ui.ac.id"
 ]
 
 
