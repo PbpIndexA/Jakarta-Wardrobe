@@ -1,7 +1,7 @@
 from django.urls import path
 
 from . import views
-from .views import RatingList, CommentList, get_ratings_by_product, get_comments_by_product, show_products_by_price, show_products_by_category, review_products, add_rating, add_comment, get_ratings_comments, show_products_by_category, product_detail, find_product, add_comment_flutter, add_rating_flutter
+from .views import RatingList, CommentList, get_ratings_by_product, get_comments_by_product, show_products_by_price, show_products_by_category, review_products, add_rating, add_comment, get_ratings_comments, show_products_by_category, product_detail, find_product, add_comment_flutter, add_rating_flutter, find_product_json
 from django.urls import path
 app_name = 'products'
 
@@ -24,6 +24,7 @@ urlpatterns = [
     path('comments/delete/<str:comment_id>/', views.delete_comment, name='delete_comment'),
     path('comments/edit/<uuid:comment_id>/', views.edit_comment, name='edit_comment'),
     path('ratings/delete/<str:rating_id>/', views.delete_rating, name='delete_rating'),
+    path('products/find/json/', find_product_json, name='find_product_json'),
 
 
 
